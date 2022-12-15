@@ -19,29 +19,30 @@ import java.util.Set;
 
 @Entity
 public class Usuario {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @NotNull
     private String nombre;
     @NotNull
-    @Column(unique=true)
-    private String NombreUsuario;
+    @Column(unique = true)
+    private String nombreUsuario;
     @NotNull
     private String email;
     @NotNull
     private String password;
-    @ManyToMany(fetch=FetchType.EAGER)
-    @JoinTable(name= "usuario_rol", joinColumns = @JoinColumn(name="usuario_id"), inverseJoinColumns=@JoinColumn(name= "rol_id"))
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "usuario_rol", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name = "rol_id"))
     private Set<Rol> roles = new HashSet<>();
- //Constructores
+    //Constructores
 
     public Usuario() {
     }
 
-    public Usuario(String nombre, String NombreUsuario, String email, String password) {
+    public Usuario(String nombre, String nombreUsuario, String email, String password) {
         this.nombre = nombre;
-        this.NombreUsuario = NombreUsuario;
+        this.nombreUsuario = nombreUsuario;
         this.email = email;
         this.password = password;
     }
@@ -64,11 +65,11 @@ public class Usuario {
     }
 
     public String getNombreUsuario() {
-        return NombreUsuario;
+        return nombreUsuario;
     }
 
-    public void setNombreUsuario(String NombreUsuario) {
-        this.NombreUsuario = NombreUsuario;
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
     }
 
     public String getEmail() {
@@ -94,5 +95,5 @@ public class Usuario {
     public void setRoles(Set<Rol> roles) {
         this.roles = roles;
     }
-    
+
 }
