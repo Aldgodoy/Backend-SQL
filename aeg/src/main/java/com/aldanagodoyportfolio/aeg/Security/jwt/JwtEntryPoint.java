@@ -4,7 +4,6 @@
  */
 package com.aldanagodoyportfolio.aeg.Security.jwt;
 
-
 //acá vamos a chequear si hay un toquen válido
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -23,7 +22,7 @@ public class JwtEntryPoint implements AuthenticationEntryPoint {
 
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {
-        logger.error("Fallo el método commence");
+        logger.error("Falló el método commence");
         response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
     }
 }
