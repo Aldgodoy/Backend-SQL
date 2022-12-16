@@ -6,17 +6,17 @@ package com.aldanagodoyportfolio.aeg.Security.Controller;
 
 //Controla los mensajes 
 public class Mensaje {
-     private String mensaje;
-     
- //constructores
 
+    private String mensaje;
+
+    //constructores
     public Mensaje() {
     }
 
     public Mensaje(String mensaje) {
         this.mensaje = mensaje;
     }
-     //getters & Setters
+    //getters & Setters
 
     public String getMensaje() {
         return mensaje;
@@ -25,6 +25,5 @@ public class Mensaje {
     public void setMensaje(String mensaje) {
         this.mensaje = mensaje;
     }
-    
-    
+
 }
